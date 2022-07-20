@@ -1,0 +1,20 @@
+name: PR_Action
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Actions from repository
+        uses: actions/checkout@v3
+
+      - name: install package
+        run: yarn install
+
+      - name: eslint
+        run: yarn lint
+
+      - name: build app
+        run: yarn build
