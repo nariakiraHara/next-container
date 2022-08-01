@@ -2,7 +2,7 @@ import classnames from 'classnames/bind'
 
 import { MouseEvent } from 'react'
 import styles from './Modal.module.scss'
-import Close from '../../../public/images/common/close.svg'
+import Close from 'assets/common/close.svg'
 
 const clx = classnames.bind(styles)
 
