@@ -3,6 +3,7 @@ import { useState, useCallback } from 'react'
 
 import classnames from 'classnames/bind'
 import style from './about.module.scss'
+import SimpleModal from 'components/organisms/SimpleModal'
 
 const clx = classnames.bind(style)
 
@@ -21,14 +22,7 @@ export const Page: NextPage = () => {
       <button onClick={handleModalOpen}>モーダル</button>
 
       {isShow && (
-        <div className={clx('p-about__modal')}>
-          <div className={clx('p-about__content')}>
-            <div className={clx('p-about__modalHeader')}>
-              <a onClick={handleModalClose}>x</a>
-            </div>
-            <div>this is a pen</div>
-          </div>
-        </div>
+        <SimpleModal onCloseClick={handleModalClose} isShow={isShow} />
       )}
     </>
   )
