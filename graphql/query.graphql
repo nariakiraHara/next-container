@@ -1,0 +1,17 @@
+query getUsersName {
+  users {
+    id
+    name
+  }
+}
+query getUsersAndTeams {
+  users {
+    id
+    name
+    teamName
+  }
+  teams {
+    id
+    name
+  }
+}

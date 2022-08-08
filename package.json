@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"yarn run gq:generate-client --watch\" \"yarn run gq:generate-server --watch\" \"next dev\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "gq:generate-client": "graphql-codegen --config graphql/codegen-client.yaml",
+    "gq:generate-server": "graphql-codegen --config graphql/codegen-server.yaml"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
@@ -22,13 +24,16 @@
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^2.9.0",
+    "@graphql-codegen/typed-document-node": "^2.3.2",
     "@graphql-codegen/typescript": "^2.7.2",
+    "@graphql-codegen/typescript-operations": "^2.5.2",
     "@graphql-codegen/typescript-resolvers": "^2.7.2",
     "@types/node": "17.0.34",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.4",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
+    "concurrently": "^7.3.0",
     "eslint": "8.15.0",
     "eslint-config-airbnb-typescript-prettier": "^5.0.0",
     "eslint-config-next": "12.1.6",
