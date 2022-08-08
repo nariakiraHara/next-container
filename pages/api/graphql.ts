@@ -26,6 +26,7 @@ type User = {
 
 // スキーマと実際のデータ構造の紐付けを resolvers で行う
 const users = (): User[] => {
+  console.log('call users method')
   return [
     { id: '1', name: 'Alice', address: 'america', teamName: 'Red' },
     { id: '2', name: 'Bob', address: 'canada', teamName: 'Red' },
