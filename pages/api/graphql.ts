@@ -11,7 +11,6 @@ const typeDefs = readFileSync(path).toString('utf-8')
 type Team = 'Red' | 'White'
 
 const teams = (): { id: string; name: Team }[] => {
-  console.log('call teams method')
   return [
     { id: '1', name: 'Red' },
     { id: '2', name: 'White' },
@@ -26,7 +25,6 @@ type User = {
 
 // スキーマと実際のデータ構造の紐付けを resolvers で行う
 const users = (): User[] => {
-  console.log('call users method')
   return [
     { id: '1', name: 'Alice', address: 'america', teamName: 'Red' },
     { id: '2', name: 'Bob', address: 'canada', teamName: 'Red' },
