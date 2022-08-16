@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "gq:generate-client": "graphql-codegen --config graphql/codegen-client.yaml",
-    "gq:generate-server": "graphql-codegen --config graphql/codegen-server.yaml"
+    "gq:generate-server": "graphql-codegen --config graphql/codegen-server.yaml",
+    "codegen": "grpc_tools_node_protoc -I ./proto --plugin=protoc-gen-ts=./node_modules/.bin/protoc-gen-ts --js_out=import_style=commonjs,binary:./proto/generated --grpc_out=grpc_js:./proto/generated --ts_out=service=grpc-node,mode=grpc-js:./proto/generated ./proto/*.proto"
   },
   "dependencies": {
     "@apollo/client": "^3.6.9",
