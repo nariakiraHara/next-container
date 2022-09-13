@@ -1,0 +1,44 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background: #000;
+  transition: all 0.3s 0s ease;
+  // animation: rotation 2s ease-in-out 0s 1 alternate none running;
+
+  // &:hover {
+  //   background: #ccc;
+  //   width: 300px;
+  // }
+}
+
+.active {
+  animation: moveInOut 2s ease-in-out 0s 1 alternate none running;
+}
+
+// @keyframes rotation {
+//   0% {
+//     transform: scale(.3);
+//   }
+
+//   50% {
+//     transform: scale(.6) rotate(-45deg);
+//     background: red;
+//   }
+
+//   100% {
+//     transform: scale(1) rotate(180deg);
+//     background: blue
+//   }
+// }
+
+@keyframes moveInOut {
+  0% {
+    transform: translateX(-100px);
+    background: #ff0000;
+  }
+
+  100% {
+    transform: translateX(0px);
+    background: #ff0000;
+  }
+}
