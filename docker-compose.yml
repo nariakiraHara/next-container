@@ -3,5 +3,6 @@ services:
   app:
     image: docker-nextjs-dev
     build: .
+    command: sh -c "yarn dev"
     ports:
       - "3000:3000"

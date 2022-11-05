@@ -6,18 +6,5 @@ RUN apk add --no-cache libc6-compat
 RUN npm i -g npm@${NPM_VERSION}
 WORKDIR /app
 
-COPY package.json ./package.json
+COPY ../ ./
 RUN yarn install
-
-COPY next.config.js ./next.config.js
-COPY tsconfig.json ./tsconfig.json
-COPY pages ./pages
-COPY public ./public
-COPY libs ./libs
-COPY assets ./assets
-COPY components ./components
-COPY graphql ./graphql
-COPY server ./server
-COPY styles ./styles
-
-CMD ["yarn", "dev"]
